@@ -12,12 +12,20 @@ class SingUp extends Component{
             email:'',
             password:''
         }
+        this.handleChangeName = this.handleChangeName.bind(this);
+        this.handleChangeLastName = this.handleChangeLastName.bind(this);
         this.handleChangeEmail = this.handleChangeEmail.bind(this);
         this.handleChangePassword = this.handleChangePassword.bind(this);
     }
 
     handleSubmit(event){
         event.preventDefault();
+    }
+    handleChangeName(event){
+        this.setState({name: event.target.value})
+    }
+    handleChangeLastName(event){
+        this.setState({name: event.target.value})
     }
     handleChangeEmail(event){
         this.setState({email: event.target.value})
@@ -32,7 +40,7 @@ class SingUp extends Component{
                 <a className={title}>Sign Up</a>
                 <form  className={form} onSubmit ={this.handleSubmit}>
                     <div className={input_row}>
-                        <input type="text" placeholder='First Name'/>
+                        <input type="text" placeholder='First Name' onChange={this.handleChangeName} value={this.state.name}/>
                         <input type="text" placeholder='First Name'/>
                     </div>
                     <input type="email" placeholder="E-mail" className = {email}  onChange={this.handleChangeEmail} value={this.state.email}/>

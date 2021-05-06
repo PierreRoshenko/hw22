@@ -13,6 +13,9 @@ export const AuthorizationForm = ()=>{
                <Route exact path='/hw22'>
                    <Redirect to = "/signin"/>
                </Route>
+               <Route exact path='/'>
+                   <Redirect to = "/signin"/>
+               </Route>
                <Route path = '/signin' component={SignIn}/>
                <Route path = '/signup' component= {SignUp}/>
             </Switch>
